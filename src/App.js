@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
+import { getStories } from './apiCalls';
 
-function App() {
+const App = () => {
+
+  // useEffect(() => {
+  //   getStories('home')
+  //   .then(response => console.log('RESPONSE:', response))
+  // }, [])
+  // .then((response) => {
+  //   if (!response.ok) {
+  //       throw new Error(response.error)
+  //   }
+  //   return response.json();
+  // })
+  // .catch(error => console.log('ERROR', error))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <h1>App</h1>
   );
 }
 
