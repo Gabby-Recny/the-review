@@ -8,7 +8,6 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 
 const App = () => {
-
   return (
     <Routes>
       <Route exact path='/' element={<MainPage/>}/>

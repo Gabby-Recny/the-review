@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.scss';
 import { NavLink } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import ArtsPage from '../ArtsPage/ArtsPage';
