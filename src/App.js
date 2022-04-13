@@ -1,22 +1,22 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getStories } from './apiCalls';
+import Header from '../src/Components/Header/Header';
 
 const App = () => {
+  const [ results, setResults ] = useState([])
+  const [ error, setError ] = useState('')
 
-  // useEffect(() => {
-  //   getStories('home')
-  //   .then(response => console.log('RESPONSE:', response))
-  // }, [])
-  // .then((response) => {
-  //   if (!response.ok) {
-  //       throw new Error(response.error)
-  //   }
-  //   return response.json();
-  // })
-  // .catch(error => console.log('ERROR', error))
+  useEffect(() => {
+    getStories('home')
+    .then(data => setResults(data,results))
+    .catch(error => setError(error))
+  }, [])
+
   return (
-   <h1>App</h1>
+    <main>
+      <Header/>
+    </main>
   );
 }
 
