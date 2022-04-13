@@ -1,8 +1,11 @@
 import react from "react";
+import './NewsArticle.scss'
 
-const NewsArticle = () => {
+const NewsArticle = (props) => {
     return (
-        <h5>News Article</h5>
+        <article className='news-card'>
+            <h3>{props.title}</h3>
+        </article>
     )
 }
 

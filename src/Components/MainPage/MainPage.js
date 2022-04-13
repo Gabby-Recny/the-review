@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import FeaturedStory from '../FeaturedStory/FeaturedStory';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import NewsArticle from '../NewsArticle/NewsArticle';
+import './MainPage.scss'
 
 const MainPage = () => {
   const [ results, setResults ] = useState([]);
@@ -20,11 +21,14 @@ const MainPage = () => {
 
   if (error) return <ErrorPage />
 
+  const briefing = results.find(story => {
+    return story.section === 'briefing'
+  }) 
+
   // const getFeaturedStory = (results) => {
   //   setTopStory(Math.floor(Math.random() * results.length))
   // }
 
-  console.log(results)
 
   const mapArticles = results.map(story => {
     return <NewsArticle 
@@ -33,7 +37,7 @@ const MainPage = () => {
               authors={story.byline}
               url={story.url}
               abstract={story.abstract}
-              // image={story.multimedia}
+              image={story.multimedia}
               type={story.section}
               date={story.created_date}
               updated_date={story.updated_date}
@@ -44,7 +48,10 @@ const MainPage = () => {
   return (
       <>
         <Header />
-        {mapArticles}
+        <section className='article-container'>
+          {mapArticles}
+        </section>
+        {/* {briefing} */}
       </>
   );
 }

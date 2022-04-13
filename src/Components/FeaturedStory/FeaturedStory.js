@@ -1,6 +1,7 @@
 import React from 'react'
 
-const FeaturedStory = ({ topStory }) => {
+const FeaturedStory = ({ briefing }) => {
+    // console.log('briefing', briefing)
     return (
         <h3>Featured Story</h3>
     )
