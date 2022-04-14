@@ -5,6 +5,7 @@ import ArtsPage from './Components/ArtsPage/ArtsPage';
 import SciencePage from './Components/SciencePage/ScincePage';
 import WorldPage from './Components/WorldPage/WorldPage';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import NewsArticle from './Components/NewsArticle/NewsArticle';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <Route exact path='/science' element={<SciencePage />}/>
       <Route exact path='/world' element={<WorldPage />}/>
       <Route path='*' element={<ErrorPage />}/>
+      <Route path='/article/:title' element={<NewsArticle/>}/>
     </Routes>
   );
 }

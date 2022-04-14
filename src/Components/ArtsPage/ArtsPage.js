@@ -10,7 +10,8 @@ const ArtsPage = () => {
       .then(data => setResults(data.results))
       .catch(error => setError(error))
     }, [])
-    
+
+    console.log(results)
     return (
         <h2>Arts</h2>
     )
