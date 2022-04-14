@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getStories } from '../../apiCalls';
 import Header from '../Header/Header';
-import FeaturedStory from '../FeaturedStory/FeaturedStory';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import NewsArticle from '../NewsArticle/NewsArticle';
+import SelectedArticle from '../SelectedArticle/SelectedArticle'
 import './MainPage.scss';
 import { Link } from 'react-router-dom';
 
 const MainPage = () => {
   const [ results, setResults ] = useState([]);
   const [ error, setError ] = useState('');
-  // const [ topStory, setTopStory ] = useState({});
 
   useEffect(() => {
     getStories('home')
@@ -20,19 +18,11 @@ const MainPage = () => {
 
   if (error) return <ErrorPage />
 
-  const briefing = results.find(story => {
-    return story.section === 'briefing'
-  }) 
-
-  // const getFeaturedStory = (results) => {
-  //   setTopStory(Math.floor(Math.random() * results.length))
-  // }
-
 
   const mapArticles = results.map(story => {
     return (
     <Link to={`/article/${story.title}`}>
-      <NewsArticle 
+      <SelectedArticle 
                 key={story.title}
                 title={story.title}
                 authors={story.byline}
@@ -51,11 +41,9 @@ const MainPage = () => {
   return (
       <>
         <Header />
-        {/* <FeaturedStory topStory={briefing}/> */}
         <section className='article-container'>
           {mapArticles}
         </section>
-        {/* {briefing} */}
       </>
   );
 }
