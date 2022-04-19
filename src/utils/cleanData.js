@@ -11,7 +11,6 @@ const cleanSelectedArticle = (article) => {
         images: article.multimedia,
         url: article.short_url,
     }
-    console.log(article.created_date)
     return cleanedArticle;
 }
 

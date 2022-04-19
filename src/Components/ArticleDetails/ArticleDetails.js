@@ -13,11 +13,10 @@ const ArticleDetails = () => {
     const params = useParams()
 
     useEffect(() => {
-        setSelectedArticle({})
         getStories('home')
         .then(data => {
             let currentArticle = data.results.find(article => {
-                return article.title = params.articleName
+                return article.title === params.articleName
             })
             let cleanArticle = cleanSelectedArticle(currentArticle)
             setLoader(false)
@@ -25,7 +24,6 @@ const ArticleDetails = () => {
         })
         .catch(error => {
             setErrorMessage(error)
-            console.log(error)
             setLoader(false)
         })
     }, [params])
