@@ -11,15 +11,6 @@ const Header = () => {
                 <NavLink to="/" element={<MainPage />}>
                     Home
                 </NavLink>
-                {/* <NavLink to="/arts" element={<ArtsPage />}>
-                    Arts
-                </NavLink>
-                <NavLink to="/science" element={<SciencePage />}>
-                    Science
-                </NavLink>
-                <NavLink to="/world" element={<World />}>
-                    World
-                </NavLink> */}
             </nav>
         </header>
     )
