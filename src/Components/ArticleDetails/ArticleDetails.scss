@@ -1,0 +1,15 @@
+.article-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: #070707;
+    color: white;
+}
+
+.article-details-image {
+    border: 5% white solid;
+    width: 70%;
+    height: 70%;
+}
