@@ -32,13 +32,17 @@ const ArticleDetails = () => {
     if (errorMessage) return <ErrorPage />
     if (isLoading) return <Loader />
 
+
+    console.log(selectedArticle.images)
+    
     return (
         <section className='article-details'>
-            {/* <img 
-            src={selectedArticle.images[0].url} 
-            alt={`${selectedArticle.images[0]}about the article titled ${selectedArticle.title}`}
-            className='article-details-image'
-            /> */}
+            {selectedArticle.images && 
+            <img 
+                src={selectedArticle.images[0].url} 
+                alt={`${selectedArticle.images[0]}about the article titled ${selectedArticle.title}`}
+                className='article-details-image'
+            />}
             <h2>{selectedArticle.title}</h2>
             <p>{selectedArticle.authors}</p>
             <p>{selectedArticle.createdDate}</p>
