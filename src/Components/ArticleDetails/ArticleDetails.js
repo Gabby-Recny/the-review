@@ -32,8 +32,6 @@ const ArticleDetails = () => {
     if (errorMessage) return <ErrorPage />
     if (isLoading) return <Loader />
 
-
-    console.log(selectedArticle.images)
     
     return (
         <section className='article-details'>
