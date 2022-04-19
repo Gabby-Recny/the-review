@@ -2,9 +2,6 @@ import React from 'react';
 import './Header.scss';
 import { NavLink } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
-import ArtsPage from '../ArtsPage/ArtsPage';
-import SciencePage from '../SciencePage/ScincePage';
-import World from '../WorldPage/WorldPage';
 
 const Header = () => {
     return (
@@ -13,15 +10,6 @@ const Header = () => {
             <nav>
                 <NavLink to="/" element={<MainPage />}>
                     Home
-                </NavLink>
-                <NavLink to="/arts" element={<ArtsPage />}>
-                    Arts
-                </NavLink>
-                <NavLink to="/science" element={<SciencePage />}>
-                    Science
-                </NavLink>
-                <NavLink to="/world" element={<World />}>
-                    World
                 </NavLink>
             </nav>
         </header>
