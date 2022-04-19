@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import { getStories } from '../../apiCalls';
+import { getStories } from '../../utils/apiCalls';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import Loader from '../Loader/Loader';
+import { cleanSelectedArticle } from '../../utils/cleanData';
 
 const ArticleDetails = () => {
     const [ selectedArticle, setSelectedArticle ] = useState({})
@@ -11,35 +12,36 @@ const ArticleDetails = () => {
 
     const params = useParams()
 
-    useEffect( () => {
+    useEffect(() => {
+        setSelectedArticle({})
         getStories('home')
         .then(data => {
             let currentArticle = data.results.find(article => {
                 return article.title = params.articleName
             })
+            let cleanArticle = cleanSelectedArticle(currentArticle)
             setLoader(false)
-            setSelectedArticle(currentArticle)
+            setSelectedArticle(cleanArticle)
         })
         .catch(error => {
             setErrorMessage(error)
+            console.log(error)
             setLoader(false)
         })
-    }, [])
+    }, [params])
 
     if (errorMessage) return <ErrorPage />
     if (isLoading) return <Loader />
 
-    console.log(selectedArticle)
     return (
         <section>
             <h2>{selectedArticle.title}</h2>
-            <p>{selectedArticle.byline}</p>
+            <p>{selectedArticle.authors}</p>
             <p>{selectedArticle.abstract}</p>
             <p>{selectedArticle.url}</p>
             <p>{selectedArticle.section}</p>
-            <p>{selectedArticle.created_date}</p>
-            <p>{selectedArticle.updated_date}</p> 
-            <p>{selectedArticle.published_date}</p>
+            <p>{selectedArticle.createdDate}</p>
+            <p>{selectedArticle.publishedDate}</p>
         </section>
     )
 }
