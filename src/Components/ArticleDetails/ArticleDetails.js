@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import './ArticleDetails.scss'
 import { useParams } from 'react-router-dom';
 import { getStories } from '../../utils/apiCalls';
 import ErrorPage from '../ErrorPage/ErrorPage';
@@ -27,19 +28,24 @@ const ArticleDetails = () => {
             setLoader(false)
         })
     }, [params])
-
+    
     if (errorMessage) return <ErrorPage />
     if (isLoading) return <Loader />
 
     return (
-        <section>
+        <section className='article-details'>
+            {/* <img 
+            src={selectedArticle.images[0].url} 
+            alt={`${selectedArticle.images[0]}about the article titled ${selectedArticle.title}`}
+            className='article-details-image'
+            /> */}
             <h2>{selectedArticle.title}</h2>
             <p>{selectedArticle.authors}</p>
-            <p>{selectedArticle.abstract}</p>
-            <p>{selectedArticle.url}</p>
-            <p>{selectedArticle.section}</p>
             <p>{selectedArticle.createdDate}</p>
-            <p>{selectedArticle.publishedDate}</p>
+            <p>{selectedArticle.abstract}</p>
+            <a href={selectedArticle.url} target="_blank">Go to NY Times article</a>
+            <p>{selectedArticle.section}</p>
+            <p>Published: {selectedArticle.publishedDate}</p>
         </section>
     )
 }
