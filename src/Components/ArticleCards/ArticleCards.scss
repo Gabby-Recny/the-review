@@ -4,9 +4,12 @@
     margin: 2%;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    justify-items: center;
+    justify-content: space-evenly;
+    justify-items: end;
+    align-content: stretch;
     align-items: center;
     text-align: center;
+    width: 80%
 }
 
 .thumbnail-type,
