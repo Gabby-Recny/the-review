@@ -20,7 +20,6 @@ form {
     padding: 5px 10px;
     border-right: none;
     border-radius: 5px 0px 0px 5px;
-    // background-color: #141414;
     margin-left: 0%;
     margin-right: 0%;
     margin-bottom: 5%;
@@ -28,12 +27,11 @@ form {
 
 .search-button {
     width: 30px;
-    height: 29.5px;
+    height: 32px;
     margin: 0px;
     padding: 5px;
     border-radius: 0px 5px 5px 0px;
-    // border: none;
-    // background-color: #141414;
+    border-left: none;
     text-align: center;
 }
 
