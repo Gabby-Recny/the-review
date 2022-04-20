@@ -11,6 +11,10 @@ The Review is a React application that utilizes the New York Times Top Stories A
 
 The Review is a [take-home challenge](https://mod4.turing.edu/projects/take_home/take_home_fe) provided by the Turing School of Software & Design to showcase my fundamental knowledge of React. The project took approximately eight hours to complete including styling and testing. 
 
+![Load Home Page and Select Article](https://user-images.githubusercontent.com/84749512/164141081-080c2344-383a-4184-a1a1-fcf0720efc8e.gif)
+
+![Search For Article](https://user-images.githubusercontent.com/84749512/164141058-2da29244-b6ab-44cb-93f0-8afaa603e566.gif)
+
 
 ### TECHNOLOGIES USED 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
