@@ -20,4 +20,4 @@ const formatDate = (date) => {
     return [day, month, year].join('/')
 }
 
-export { cleanSelectedArticle };
+export { cleanSelectedArticle, formatDate };

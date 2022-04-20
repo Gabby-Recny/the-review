@@ -1,10 +1,6 @@
 @use '../Styles/_mixins' as m;
 
 header {
-    @include m.flexbox(row, no-wrap, space-around, normal, flex-end)
-}
-
-nav {
-    @include m.flexbox(row, no-wrap, space-between, normal, normal);
-    width: 50%;
+    @include m.flexbox(row, no-wrap, flex-start, normal, center);
+    margin-left: 2%;
 }
