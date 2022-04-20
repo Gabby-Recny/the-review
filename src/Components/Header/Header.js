@@ -6,12 +6,9 @@ import MainPage from '../MainPage/MainPage';
 const Header = () => {
     return (
         <header>
-            <h1>The Review</h1>
-            <nav>
-                <NavLink to="/" element={<MainPage />}>
-                    Home
-                </NavLink>
-            </nav>
+            <NavLink to="/" element={<MainPage />}>
+               <h1>The Review</h1>
+            </NavLink>
         </header>
     )
 }

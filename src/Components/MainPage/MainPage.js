@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import Search from '../Search/Search';
 import FeaturedArticle from '../FeaturedArticle/FeaturedArticle';
+import { formatDate } from '../../utils/cleanData';
+
 
 const MainPage = () => {
   const [ results, setResults ] = useState([]);
@@ -43,6 +45,8 @@ const MainPage = () => {
         <ArticleCards 
                   key={index}
                   title={story.title}
+                  images={story.multimedia}
+                  publishDate={formatDate(story.published_date)}
                   type={story.section}
                   />
         </Link>
