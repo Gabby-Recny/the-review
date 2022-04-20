@@ -6,6 +6,7 @@ import './MainPage.scss';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import Search from '../Search/Search';
+import FeaturedArticle from '../FeaturedArticle/FeaturedArticle';
 
 const MainPage = () => {
   const [ results, setResults ] = useState([]);
@@ -51,6 +52,7 @@ const MainPage = () => {
   return (
       <>
         <Search searchArticles={searchArticles}/>
+        {/* <FeaturedArticle feature={results[0]}/> */}
         <section className='article-container'>
           {isSearching && mapArticles(searchResults)}
           {!isSearching && mapArticles(results)}
