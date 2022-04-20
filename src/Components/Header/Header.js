@@ -17,10 +17,3 @@ const Header = () => {
 }
 
 export default Header;
-
-
-// https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=yourkey
-// https://api.nytimes.com/svc/topstories/v2/home.json?api-key=yourkey
-// https://api.nytimes.com/svc/topstories/v2/science.json?api-key=yourkey
-// https://api.nytimes.com/svc/topstories/v2/us.json?api-key=yourkey
-// https://api.nytimes.com/svc/topstories/v2/world.json?api-key=yourkey;
