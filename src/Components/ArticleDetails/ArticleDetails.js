@@ -34,21 +34,23 @@ const ArticleDetails = () => {
 
     
     return (
-        <section className='article-details'>
-            {selectedArticle.images && 
-            <img 
+        <>
+            <section className='article-details'>
+                {selectedArticle.images && 
+                <img 
                 src={selectedArticle.images[0].url} 
                 alt={`${selectedArticle.images[0]}about the article titled ${selectedArticle.title}`}
                 className='article-details-image'
-            />}
-            <h2>{selectedArticle.title}</h2>
-            <p>{selectedArticle.authors}</p>
-            <p>{selectedArticle.createdDate}</p>
-            <p>{selectedArticle.abstract}</p>
-            <a href={selectedArticle.url} target="_blank">Go to NY Times article</a>
-            <p>{selectedArticle.section}</p>
-            <p>Published: {selectedArticle.publishedDate}</p>
-        </section>
+                />}
+                <h2>{selectedArticle.title}</h2>
+                <p>{selectedArticle.authors}</p>
+                <p>{selectedArticle.createdDate}</p>
+                <p>{selectedArticle.abstract}</p>
+                <a href={selectedArticle.url} target="_blank">Go to NY Times article</a>
+                <p>{selectedArticle.section}</p>
+                <p>Published: {selectedArticle.publishedDate}</p>
+            </section>
+        </>
     )
 }
 

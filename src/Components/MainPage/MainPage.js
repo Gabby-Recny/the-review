@@ -5,11 +5,14 @@ import ArticleCards from '../ArticleCards/ArticleCards'
 import './MainPage.scss';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
+import Search from '../Search/Search';
 
 const MainPage = () => {
   const [ results, setResults ] = useState([]);
   const [ error, setError ] = useState('');
-  const [ isLoading, setLoader ] = useState(true)
+  const [ isLoading, setLoader ] = useState(true);
+  const [ searchResults, setSearchResults ] = useState([])
+  const [ isSearching, setSearch ] = useState(false)
 
 
   useEffect(() => {
@@ -24,23 +27,33 @@ const MainPage = () => {
   if (error) return <ErrorPage />
   if (isLoading) return <Loader />
 
+  const searchArticles = (searchInput) => {
+    let filteredArticles = results.filter(result => {
+      return result.title.toLowerCase().includes(searchInput) || result.section.toLowerCase().includes(searchInput)
+    })
+    setSearch(true)
+    setSearchResults(filteredArticles)
+}
 
-  const mapArticles = results.map(story => {
+
+  const mapArticles = (stories) => stories.map((story, index) => {
     return (
-    <Link key={story.title} to={`/article/${story.title}`}>
-      <ArticleCards 
-                key={story.title}
-                title={story.title}
-                type={story.section}
-              />
-      </Link>
+      <Link key={index} to={`/article/${story.title}`}>
+        <ArticleCards 
+                  key={index}
+                  title={story.title}
+                  type={story.section}
+                  />
+        </Link>
     )
   })
 
   return (
       <>
+        <Search searchArticles={searchArticles}/>
         <section className='article-container'>
-          {mapArticles}
+          {isSearching && mapArticles(searchResults)}
+          {!isSearching && mapArticles(results)}
         </section>
       </>
   );
